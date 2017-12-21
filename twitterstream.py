@@ -1,12 +1,11 @@
 import oauth2 as oauth
 import urllib2 as urllib
 
-# See assignment1.html instructions or README for how to get these credentials
-
-api_key = "sszutgRrogLYwojz0kSTmvsPj"
-api_secret = "jyLncI7KXaP7fyFBa8ygL1Ph5K0a454o97jYLFXJdaCSZqPHYT"
-access_token_key = "1721556720-6dOgcmKGufYwnR1bkukcNCR7aiMgYlgW4cxr9b6"
-access_token_secret = "4hchMfpZwIZJ4qGQQmSTugo9xcv9uIZ8u5iGKaRj3AN9q"
+# please replace the strings to your information
+api_key = 'api_key'
+api_secret = "api_secret"
+access_token_key = "token_key"
+access_token_secret = "token_secret"
 
 _debug = 0
 
@@ -33,7 +32,7 @@ def twitterreq(url, method, parameters):
 
     req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
 
-    headers = req.to_header()
+    #headers = req.to_header()
 
     if http_method == "POST":
         encoded_post_data = req.to_postdata()
@@ -51,9 +50,8 @@ def twitterreq(url, method, parameters):
 
 def fetchsamples():
     url = "https://stream.twitter.com/1.1/statuses/sample.json"
-    #url = "https://api.twitter.com/1.1/search/tweets.json?q=shopify&count=100"
     parameters = []
-    response = twitterreq(url, "GET", parameters)
+    response = twitterreq(url, http_method, parameters)
     for line in response:
         print line.strip()
 
