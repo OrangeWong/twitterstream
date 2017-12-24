@@ -33,3 +33,5 @@ We can rank the hashtags and print out the first top ten hashtags in the output.
 by the following command:
 $ python top_ten.py output.txt
 
+## tweets in MongoDB (tweets_in_mongodb.ipynb)
+1. A MongoDB database is developed to store the tweets. Then, we perform the same sentiment anlysis by using pipeline in MongoDB. 
